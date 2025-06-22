@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesona Kepri - Travel Guide & News</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Loading Overlay -->
+  <div id="loading" class="loading-overlay">
+    <div class="spinner"></div>
+    Loading...
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-left">
+      <a href="#" data-page="home" class="icon">
+        <img src="assets/logo1.jpeg" alt="logo" width="40" height="40" class="logo-circle" style="border-radius: 50%;">
+      </a>
+      <h1><a href="#" data-page="home">PESONA KEPRI</a></h1>
+    </div>
+
+    <div class="nav-right">
+      <nav>
+        <ul>
+          <li><a href="#" data-page="home">Beranda</a></li>
+          <li><a href="#" data-page="wisata">Wisata</a></li>
+          <li><a href="#" data-page="artikel">Artikel</a></li>
+          <li><a href="#" data-page="kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <span id="searchToggle" class="icon">
+        <img src="assets/search.png" alt="search_icon" width="25" height="25">
+      </span>
+
+      <span id="letterToggle" class="icon">
+        <img src="assets/text.png" alt="text" width="25" height="25">
+      </span>
+
+      <div id="fontSizeSlider" class="font-slider">
+        <label for="slider">Ukuran Font: <span id="fontPercent">100%</span></label>
+        <input type="range" id="slider" min="12" max="24" value="16">
+      </div>
+
+      <span id="darkModeToggle" class="icon">
+        <img src="assets/moon.png" alt="dark_mode_icon" width="25" height="25">
+      </span>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="search-bar" id="searchBar">
+    <input type="text" id="searchInput" placeholder="Cari..." />
+  </div>
+
+  <!-- Konten Utama -->
+  <main id="content"></main>
+
+  <!-- Footer -->
+  <!-- Footer -->
+<div class="footer-placeholder">
+  <div class="footer-content">
+    <div class="footer-text">
+      <p style="font-weight: bold; font-size: 18px;">Tentang Kami</p>
+      <p style="font-size: 12px; margin-top: 10px;">
+        Pesona Kepri adalah platform digital yang didedikasikan untuk memperkenalkan pesona alam, budaya, dan destinasi wisata terbaik di Kepulauan Riau. Kami berkomitmen untuk menyuguhkan konten informatif dan inspiratif tentang keindahan yang tersembunyi maupun yang sudah terkenal di wilayah ini. Temukan artikel menarik, panduan wisata, dan informasi terbaru seputar Kepulauan Riau hanya di Pesona Kepri – gerbang menuju keajaiban Kepri.
+      </p>
+
+      <hr class="footer-divider">
+
+      <div class="sosial-link">
+        <a href="tel:0812345678">
+          ☎️ 0812345678
+        </a>
+        <a href="mailto:pesonakepri2025@gmail.com">
+          📧 pesonakepri2025@gmail.com
+        </a>
+        <a href="https://instagram.com/pesonakepri2025" target="_blank">
+          📸 @pesonakepri2025
+        </a>
+      </div>
+    </div>
+    <div class="footer-logo">
+      <img src="assets/logo-footer.png" alt="Logo Pesona Kepri">
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+    <p class="footer-copyright">Copyright @ 2025 All Right Reserved, Pesona Kepri</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="detail-wisata.js"></script>
+</body>
+</html>

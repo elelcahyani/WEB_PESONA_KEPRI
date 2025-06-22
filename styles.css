@@ -1,0 +1,793 @@
+/* ===========================
+   Import Font & Reset Dasar
+==============================*/
+/* Import font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Reset margin, padding, dan box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root font size */
+html {
+  --font-size: 16px;
+  font-size: var(--font-size);
+}
+
+/* Elemen teks pakai font size default */
+p, h1, h2, h3, span, div {
+  font-size: inherit;
+}
+
+
+.stat h2 {
+  color: #bfa100;
+  font-size: 30px;
+  margin: 0;
+}
+
+.stat p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+
+
+/* ===========================
+   Body & Typography
+==============================*/
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  font-size: 16px;
+}
+
+
+/* ===========================
+   Header & Navigation
+==============================*/
+header {
+  background-color: #018175;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 100px;
+  height: 70px;
+  
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-left h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Navigation menu */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ===========================
+   Navbar Hover & Active State
+==============================*/
+nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+  
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+
+/* ===========================
+   Font Slider
+==============================*/
+.font-slider {
+  position: fixed;
+  top: 90px; /* di bawah header */
+  right: 20px;
+  background-color: #018175;
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+  color: white;
+}
+
+.font-slider input[type="range"] {
+  width: 200px;
+  margin-top: 10px;
+}
+
+#fontPercent {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* ===========================
+   Search Bar
+==============================*/
+.search-bar {
+  position: fixed;
+  top: 70px; /* jarak dari atas (sesuaikan header) */
+  right: 20px; /* pojok kanan */
+  width: 300px;
+  background-color: #018175;
+  padding: 10px 20px;
+  display: none;
+  z-index: 1000;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+/* ========================
+   LOADING SPINNER STYLES
+=========================== */
+.loading-overlay {
+  display:none;
+  position: absolute;
+  top:0; left:0;
+  vertical-align: middle;
+  width:100%; height:100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  text-align:center;
+  padding-top: 305px;
+  font-size: 24px;
+  color: #333;
+}
+
+
+.loading-overlay .spinner {
+  margin: 0 auto 20px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===========================
+   Hero Section & Footer Placeholder
+==============================*/
+
+
+.hero-placeholder {
+  width: auto;
+  height: 410px;
+  background-image: url("https://wartakepri.co.id/wp-content/uploads/2022/03/Pantai-Datu-Duwata-Anambas-Kepri.jpg");
+  background-size: cover;
+}
+
+.hero-placeholder-bawah {
+  position: relative;
+  width: auto;
+  height: 170px;
+  background-image: url("herobawah.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+  margin-bottom: 90px;
+}
+
+.hero-placeholder-bawah::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 35, 43, 0.813);
+  z-index: -1;
+}
+
+.hero-text {
+  padding: 0 100px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* ===========================
+   Slider Hero
+==============================*/
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 410px;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  will-change: transform;
+  transform: translateZ(0); /* paksa GPU */
+}
+
+.slider img {
+  width: 100%;
+  height: 410px;
+  object-fit: fill; /* lebih efisien daripada contain */
+  flex-shrink: 0;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-nav.prev {
+  left: 10px;
+}
+
+.slider-nav.next {
+  right: 10px;
+}
+
+/* ===========================
+  DATA & COUNTING ANIMATION
+==============================*/
+.welcome-stats-wrapper {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.welcome-stats-wrapper .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("bg-stat.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: -1;
+
+  /* Efek memudar di atas dan bawah */
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+
+.welcome {
+  text-align: center;
+  padding: 0px 100px;
+  color: #018175;
+}
+
+.welcome h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.welcome p {
+  font-size: 24px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 30px;
+  gap: 40px;
+  text-align: center;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  max-width: 700px; /* sesuai 3 x max-width stat + gap */
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.stat {
+  flex: 1 1 0;
+  max-width: 220px;
+  min-width: 180px;
+}
+
+
+/* ===========================
+   Destinasi, Artikel, Tentang Kami
+==============================*/
+.destinasi-wisata,
+.artikel,
+.tentang-kami {
+  padding: 40px 100px;
+
+}
+
+/* Destinasi */
+.destinasi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* Item destinasi */
+.destinasi-item {
+  width: calc(25% - 20px);
+  text-align: center;
+}
+
+.destinasi-item a {
+  text-decoration: none;
+}
+
+/* Gambar destinasi */
+.gambar-placeholder {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Label nama destinasi */
+.label {
+  background-color: #018175;
+  color: white;
+  padding: 20px;
+  height: 100px;
+  font-weight: normal;
+  text-align: center;
+  font-size: large;
+}
+
+.destinasi-item a.destinasi-box {
+  display: block;
+  overflow: hidden; /* penting untuk memotong isi */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.destinasi-item a.destinasi-box:hover {
+  transform: scale(1.05);
+}
+
+/* Deskripsi konten */
+.deskripsi .content {
+  display: flex;
+  align-items: center; /* Vertikal center gambar dan teks */
+  justify-content: space-between; /* Jarak antar elemen */
+}
+
+/* ===========================
+   Artikel
+==============================*/
+/* Artikel Section */
+.artikel {
+  padding: 40px 100px;
+}
+
+.artikel-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.artikel-item.kanan {
+  flex-direction: row-reverse;
+}
+
+.artikel-item img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.artikel-item .konten {
+  padding: 15px;
+}
+
+.artikel-item h3 {
+  margin-bottom: 15px;
+  color: #018175;
+  font-size: 1.5rem;
+}
+
+.artikel-item h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.artikel-item p {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.artikel-item .tanggal {
+  display: block;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+
+/* ===========================
+   Link Selengkapnya & Kembali
+==============================*/
+.selengkapnya {
+  margin-top: 20px;
+  text-align: right; /* pastikan ini untuk rata kanan */
+}
+
+.selengkapnya a {
+  color: #018175;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block; /* supaya klik area cukup luas */
+  padding: 5px 10px; /* opsional agar klik nyaman */
+}
+
+.selengkapnya a:hover {
+  text-decoration: underline; /* efek hover */
+}
+
+.kembali {
+  margin-top: 40px;
+  text-align: left; /* pastikan ini untuk rata kanan */
+}
+
+.kembali a {
+  color: #018175;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block; /* supaya klik area cukup luas */
+}
+
+.kembali a:hover {
+  text-decoration: underline; /* efek hover */
+}
+
+/* ===========================
+  HALAMAN KONTAK KAMI
+==============================*/
+.container {
+  padding: 40px 100px;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.contact-box {
+  flex: 1 1 30%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  border-color: white;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.form-box {
+  position: relative;
+  flex: 2 1 60%;
+  background: #000000;
+  padding: 20px;
+  border-radius: 8px;
+  margin-left: 10px;
+  overflow: hidden;
+  color: white;
+}
+
+.form-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://th.bing.com/th/id/OIP.46o6oUxcqryrEtBCs3BLuAHaE8?w=244&h=180&c=7&r=0&o=5&pid=1.7");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.form-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.form-box form input,
+.form-box form textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.form-box form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-box form button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* ===========================
+   Footer
+==============================*/
+.footer1 {
+  object-fit: cover;
+}
+
+.sosial-link {
+  display: flex;
+  justify-content: center;
+  gap: 145px;
+  margin-top: 20px;
+}
+
+.sosial-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+footer {
+  background-color: #018175;
+  color: white;
+  padding: 0 100px;
+  height: 50px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;      /* Vertikal */
+  justify-content: center;  /* Horizontal */
+}
+
+.footer-placeholder {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background-image: url("footeratas.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 30px 100px;
+  margin-top: 90px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.footer-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.850);
+  z-index: -1;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.footer-text {
+  max-width: 500px;
+  z-index: 1;
+  text-align: justify;
+}
+
+.footer-logo {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+.footer-logo img {
+  height: 250px;/* sesuaikan dengan ukuran logo */
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid white;
+  margin: 20px 0;
+  opacity: 0.6;
+}
+
+.sosial-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin-top: 10px;
+}
+
+.sosial-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sosial-link a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   Dark Mode
+==============================*/
+body.dark-mode {
+  background-color: black;
+  color: #ddd;
+}
+
+body.dark-mode footer,
+body.dark-mode header {
+  background-color: #2f2f2f;
+}
+
+body.dark-mode .welcome {
+  text-align: center;
+  padding: 0px 100px;
+  color: #ffffff;
+  margin-top: 90px;
+}
+
+body.dark-mode .label {
+  background-color: #2f2f2f;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+body.dark-mode nav a {
+  color: white;
+}
+
+body.dark-mode .hero-text {
+  background: black;
+  color: white;
+  padding: 0 100px;
+}
+
+body.dark-mode .search-bar {
+  background-color: #ffffff;
+}
+
+body.dark-mode .search-bar input {
+  background-color: black;
+  color: white;
+}
+
+body.dark-mode .icon {
+  color: #1d1e40;
+}
+
+body.dark-mode .contact-box{
+  box-shadow: none; /* atau sesuaikan dengan warna gelap jika ingin tetap ada efek */
+  border-color: black;
+}
+
+body.dark-mode .artikel-item{
+  background: #2f2f2f;
+}
+
+body.dark-mode .artikel-item p {
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+body.dark-mode .artikel-item .tanggal {
+  display: block;
+  color: #b1b1b1;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
